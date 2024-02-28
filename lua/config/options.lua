@@ -21,3 +21,7 @@ vim.cmd([[
     autocmd CursorHold * lua Update_winbar()
   augroup END
 ]])
+
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.g.autoformat = false
