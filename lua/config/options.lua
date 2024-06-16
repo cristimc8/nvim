@@ -25,3 +25,4 @@ vim.cmd([[
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.g.autoformat = false
+vim.opt.commentstring = "// %s"

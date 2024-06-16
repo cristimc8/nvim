@@ -9,6 +9,9 @@ return {
         panel = {
           enabled = true,
           auto_refresh = true,
+          keymap = {
+            accept = "<Tab>"
+          }
         },
         suggestion = {
           enabled = true,
