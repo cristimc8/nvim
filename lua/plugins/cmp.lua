@@ -26,6 +26,9 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<C-l>"] = cmp.mapping(function()
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", true)
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
