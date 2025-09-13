@@ -23,6 +23,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.angular" },
 
+    { import = "lazyvim.plugins.extras.editor.telescope" },
+
     -- import/override with your plugins
     { import = "plugins" },
   },
