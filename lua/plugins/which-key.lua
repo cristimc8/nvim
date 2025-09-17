@@ -3,12 +3,10 @@ return {
   opts = function(_, opts)
     local wk = require("which-key")
 
-    wk.register({
-      w = {
-        name = "Window",
-        ["|"] = { "<cmd>vsplit<cr>", "Vertical Split" },
-        ["-"] = { "<cmd>split<cr>", "Horizontal Split" },
-      },
-    }, { prefix = "<leader>" })
+    wk.add({
+      { "<leader>w",  group = "Window" },
+      { "<leader>w-", "<cmd>split<cr>",  desc = "Horizontal Split" },
+      { "<leader>w|", "<cmd>vsplit<cr>", desc = "Vertical Split" },
+    })
   end,
 }
