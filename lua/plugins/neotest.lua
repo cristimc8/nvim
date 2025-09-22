@@ -3,6 +3,9 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "haydenmeade/neotest-jest",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
     },
     config = function()
       local function find_package_json_dir(start_dir)
@@ -11,6 +14,7 @@ return {
           if vim.fn.glob(path .. "/package.json") ~= "" then
             return path
           end
+          print("Found jest config:", path)
           path = vim.fn.fnamemodify(path, ":h")
         end
         return nil
@@ -32,6 +36,7 @@ return {
           end
         end
 
+        print("No jest config found")
         return nil -- Return nil if no config file is found
       end
 
@@ -46,12 +51,6 @@ return {
               return find_package_json_dir(buffer_dir) or vim.fn.getcwd()
             end,
           }),
-        },
-        discovery = {
-          enabled = function(file_path)
-            -- Match both ".spec.ts" and "-spec.ts" files
-            return file_path:match("%.spec%.ts$") or file_path:match("%-spec%.ts$")
-          end,
         },
       })
     end,
